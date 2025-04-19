@@ -1,0 +1,10 @@
+while not targetexists 
+    cast 'Teleport'
+    if findtype "rope" backpack
+        say '[rope'
+    endif
+    waitfortarget
+endwhile
+while targetexists
+    stop
+endwhile
