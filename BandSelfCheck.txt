@@ -1,0 +1,3 @@
+if not bandaging
+    hotkey 'Bandage Self'
+endif
