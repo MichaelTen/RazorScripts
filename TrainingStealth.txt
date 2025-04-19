@@ -1,0 +1,11 @@
+while skill "Stealth" < 100
+    // always train Hiding
+    useskill "Hiding"
+        wait 10500
+
+    // if shown Hiding is ≥ 80, do one Stealth
+    if skill "Hiding" >= 80
+        useskill "Stealth"
+        wait 10500
+    endif
+endwhile
