@@ -1,0 +1,7 @@
+dclicktype '3849'
+wait 225
+dclicktype '3852'
+wait 225
+dclicktype '3846'
+wait 230
+dclicktype '3848'
