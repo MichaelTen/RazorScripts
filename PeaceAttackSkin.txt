@@ -1,0 +1,56 @@
+// BARDING
+hotkey 'Target Closest Grey Monster'
+if targetexists 
+    hotkey 'Cancel Current target'
+endif
+
+useskill 'Peacemaking'
+wft 500
+if insysmsg "What instrument"
+    if findtype "bamboo flute" backpack as inny
+        target inny
+    elseif findtype "tambourine" backpack as inny
+        target inny
+    elseif findtype "drum" backpack as inny
+        target inny
+    elseif findtype "lute" backpack as inny
+        target inny
+    elseif findtype "lap harp" backpack as inny
+        target inny
+    else
+        overhead "I do not have an inny" 34
+        wait 2000
+        replay
+    endif
+    wft 500
+endif
+
+@setvar! myKillTarget lasttarget
+target myKillTarget 
+getlabel myKillTarget desc
+overhead desc 88 myKillTarget
+
+// BARDING
+say "all kill"
+wait 200
+hotkey "Target Closest Grey Monster"
+wait 200
+if insysmsg "no one matching"
+    // do nothing
+    stop
+else
+    attack lasttarget 
+endif
+
+hotkey "Target Closest Grey Monster"
+wait 200
+if insysmsg "no one matching"
+    // do nothing
+    stop
+else
+    attack lasttarget 
+endif
+
+dclicktype '11552'
+waitfortarget
+hotkey 'Target Self'
