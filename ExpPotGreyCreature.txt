@@ -1,0 +1,10 @@
+dclicktype '3853'
+waitfortarget
+hotkey "Target Closest Grey Monster"
+wait 200
+if insysmsg "no one matching"
+    // do nothing
+    stop
+else
+    attack lasttarget 
+endif
